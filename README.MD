@@ -269,7 +269,7 @@ npm run build
 4 - Add the following server config in nginx at location /etc/nginx/sites-available/
 ```
 
-//NextJS
+NextJS
 server {
     listen 80;
     server_name anuragdeep.com www.anuragdeep.com;
@@ -289,7 +289,7 @@ server {
     }
 }
 
-//Strapi NodeJS
+Strapi NodeJS
 server {
   listen 80;
   server_name api.anuragdeep.com;
