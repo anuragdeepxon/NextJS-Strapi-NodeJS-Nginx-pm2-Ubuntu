@@ -239,7 +239,7 @@ pm2 start npm --name fe -- run start
 pm2 startup ubuntu 
 ```
 
-## React App Deployment
+## App Deployment
 
 ```
 cd ../client
