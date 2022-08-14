@@ -126,6 +126,7 @@ ufw allow "Nginx Full"
 ```
  nano /etc/nginx/sites-available/anuragdeep.com
 ```
+
 ```
 server {
   listen 80;
@@ -269,6 +270,7 @@ npm run build
 4 - Add the following server config in nginx at location /etc/nginx/sites-available/
 ```
 
+```
 NextJS
 server {
     listen 80;
