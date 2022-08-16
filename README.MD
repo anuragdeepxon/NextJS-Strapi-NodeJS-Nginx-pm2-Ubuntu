@@ -271,18 +271,17 @@ npm run build
 ```
 
 ```
-NextJS
+//NextJS
 server {
-    listen 80;
     server_name anuragdeep.com www.anuragdeep.com;
 
     location ^~ /_next/static/ {
-        alias /var/www/server/site/.next/static/;
+        alias /var/www/server/adfiles/.next/static/;
         access_log on;
     }
 
     location / {
-        proxy_pass http://localhost:3000;
+	proxy_pass http://localhost:3000;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -291,18 +290,17 @@ server {
     }
 }
 
-Strapi NodeJS
+//NodeJS Strapi
 server {
-  listen 80;
-  server_name api.anuragdeep.com;
-  location / {
-    proxy_pass http://127.0.0.0.1:1337;
-    proxy_http_version 1.1;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection 'upgrade';
-    proxy_set_header Host $host;
-    proxy_cache_bypass $http_upgrade;
-    }
+        server_name admin.anuragdeep.com www.admin.anuragdeep.com;
+
+        location / {
+           proxy_pass http://anuragdeep.com:1337;
+           proxy_set_header Host $host;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+           proxy_set_header X-Forwarded-Proto $scheme;
+       }
 }
 
 ```
